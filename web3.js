@@ -44,12 +44,7 @@ async function loadStats() {
     }
 }
 
-function stake() {
-    alert("Staking functionality coming soon!");
-}
-
-function unstake() {
-    alert("Unstake functionality coming soon!");
-}
+function stake() { alert("Staking functionality coming soon!"); }
+function unstake() { alert("Unstake functionality coming soon!"); }
 
 window.addEventListener('load', loadStats);

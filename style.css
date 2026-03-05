@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Body e fontes */
+/* Body */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #0b0f1a 0%, #131b2b 100%);
@@ -88,7 +88,7 @@ nav a:hover {
     box-shadow: 0 6px 25px rgba(0,255,163,0.7);
 }
 
-/* Stats Dashboard */
+/* Stats & Cards */
 .stats {
     display: flex;
     justify-content: center;
@@ -97,7 +97,7 @@ nav a:hover {
     flex-wrap: wrap;
 }
 
-.stat {
+.stat, .card {
     background: linear-gradient(145deg, #111827, #1a2333);
     padding: 30px 45px;
     border-radius: 20px;
@@ -107,47 +107,15 @@ nav a:hover {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.stat:hover {
+.stat:hover, .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(0,255,163,0.5);
 }
 
-.stat h3 {
+.stat h3, .card h3 {
     color: #00ffa3;
     font-size: 18px;
     margin-bottom: 8px;
-}
-
-/* Sections */
-.section {
-    padding: 100px 10%;
-    text-align: center;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.card {
-    background: linear-gradient(145deg, #111827, #1a2333);
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(0,255,163,0.5);
-}
-
-.card h3 {
-    color: #00ffa3;
-    margin-bottom: 15px;
-    font-size: 20px;
 }
 
 .contract {
