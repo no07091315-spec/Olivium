@@ -74,7 +74,7 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Stats (Price, Marketcap, Holders) */
+/* Stats (Price, Marketcap, Holders, Staking) */
 .stats {
     display: flex;
     justify-content: center;
@@ -150,5 +150,9 @@ footer {
     .stats {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
     }
 }

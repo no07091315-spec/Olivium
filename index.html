@@ -1,331 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Olivium (OLV)</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-font-family:Poppins;
-background:#0b0f1a;
-color:white;
-}
-
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:#0f172a;
-}
-
-.logo{
-font-size:26px;
-font-weight:700;
-color:#00ffa3;
-}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:white;
-opacity:.8;
-}
-
-.hero{
-text-align:center;
-padding:110px 20px;
-}
-
-.hero h1{
-font-size:60px;
-}
-
-.hero p{
-margin-top:10px;
-opacity:.7;
-}
-
-.stats{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:40px;
-flex-wrap:wrap;
-}
-
-.stat{
-background:#111827;
-padding:25px 40px;
-border-radius:12px;
-}
-
-.stat h3{
-color:#00ffa3;
-}
-
-.btn{
-padding:14px 30px;
-border:none;
-border-radius:8px;
-background:#00ffa3;
-color:black;
-font-weight:600;
-cursor:pointer;
-margin:10px;
-}
-
-.section{
-padding:90px 10%;
-text-align:center;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.card{
-background:#111827;
-padding:30px;
-border-radius:12px;
-}
-
-.card h3{
-color:#00ffa3;
-margin-bottom:10px;
-}
-
-.contract{
-font-size:12px;
-word-break:break-all;
-opacity:.7;
-}
-
-iframe{
-border-radius:10px;
-}
-
-footer{
-padding:40px;
-background:#0f172a;
-text-align:center;
-margin-top:80px;
-opacity:.7;
-}
-
-</style>
-
+<title>Olivium (OLV) - Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
 <header>
-
-<div class="logo">OLIVIUM</div>
-
-<nav>
-<a href="#about">About</a>
-<a href="#tokenomics">Tokenomics</a>
-<a href="#buy">Buy</a>
-</nav>
-
+  <div class="logo">OLIVIUM</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="buy.html">Buy</a>
+    <a href="explorer.html">Explorer</a>
+  </nav>
 </header>
 
 <section class="hero">
-
 <h1>Olivium (OLV)</h1>
 <p>Scarce Digital Asset on Polygon</p>
-
 <button class="btn" onclick="connectWallet()">Connect Wallet</button>
 <button class="btn" onclick="addToken()">Add OLV</button>
 
 <div class="stats">
-
-<div class="stat">
-<h3>Price</h3>
-<p id="price">Loading...</p>
+  <div class="stat">
+    <h3>Price</h3>
+    <p id="price">Loading...</p>
+  </div>
+  <div class="stat">
+    <h3>Market Cap</h3>
+    <p id="marketcap">Loading...</p>
+  </div>
+  <div class="stat">
+    <h3>Holders</h3>
+    <p id="holders">Loading...</p>
+  </div>
+  <div class="stat">
+    <h3>Staking Rewards</h3>
+    <p id="staking">Loading...</p>
+    <button class="btn" onclick="stake()">Stake OLV</button>
+    <button class="btn" onclick="unstake()">Unstake OLV</button>
+  </div>
 </div>
-
-<div class="stat">
-<h3>Market Cap</h3>
-<p id="marketcap">Loading...</p>
-</div>
-
-<div class="stat">
-<h3>Holders</h3>
-<p id="holders">Loading...</p>
-</div>
-
-</div>
-
 </section>
 
 <section class="section" id="about">
-
 <h2>About Olivium</h2>
-
 <p style="max-width:700px;margin:auto;margin-top:20px;opacity:.8">
-
 Olivium is a scarce digital asset deployed on the Polygon network with a fixed supply of 10,000 tokens.
-
 </p>
-
 </section>
 
 <section class="section" id="tokenomics">
-
 <h2>Tokenomics</h2>
-
 <div class="cards">
-
-<div class="card">
-<h3>Total Supply</h3>
-<p>10,000 OLV</p>
+  <div class="card">
+    <h3>Total Supply</h3>
+    <p>10,000 OLV</p>
+  </div>
+  <div class="card">
+    <h3>Network</h3>
+    <p>Polygon</p>
+  </div>
+  <div class="card">
+    <h3>Standard</h3>
+    <p>ERC-20</p>
+  </div>
+  <div class="card">
+    <h3>Contract</h3>
+    <p class="contract">0xd08d000f1ac5d77274dde5cc146664793f990733</p>
+  </div>
 </div>
-
-<div class="card">
-<h3>Network</h3>
-<p>Polygon</p>
-</div>
-
-<div class="card">
-<h3>Standard</h3>
-<p>ERC-20</p>
-</div>
-
-<div class="card">
-<h3>Contract</h3>
-<p class="contract">
-0xd08d000f1ac5d77274dde5cc146664793f990733
-</p>
-</div>
-
-</div>
-
 </section>
 
 <section class="section">
-
 <h2>Price Chart</h2>
-
-<div style="margin-top:40px">
-
-<iframe
-src="https://dexscreener.com/polygon/0xd08d000f1ac5d77274dde5cc146664793f990733?embed=1"
-width="100%"
-height="500">
-</iframe>
-
-</div>
-
-</section>
-
-<section class="section" id="buy">
-
-<h2>Buy OLV</h2>
-
-<a href="https://app.uniswap.org/#/swap?outputCurrency=0xd08d000f1ac5d77274dde5cc146664793f990733" target="_blank">
-<button class="btn">Buy Olivium</button>
-</a>
-
+<iframe src="https://dexscreener.com/polygon/0xd08d000f1ac5d77274dde5cc146664793f990733?embed=1" width="100%" height="500"></iframe>
 </section>
 
 <footer>
-
 <p>© 2026 Olivium Project</p>
-
 </footer>
 
-<script>
-
-const contract="0xd08d000f1ac5d77274dde5cc146664793f990733"
-
-async function connectWallet(){
-
-if(window.ethereum){
-
-await ethereum.request({method:'eth_requestAccounts'})
-alert("Wallet Connected")
-
-}else{
-
-alert("Install MetaMask")
-
-}
-
-}
-
-async function addToken(){
-
-try{
-
-await ethereum.request({
-
-method:'wallet_watchAsset',
-
-params:{
-type:'ERC20',
-options:{
-address:contract,
-symbol:'OLV',
-decimals:18
-}
-
-}
-
-})
-
-}catch(e){
-
-console.log(e)
-
-}
-
-}
-
-async function loadStats(){
-
-try{
-
-let res=await fetch(`https://api.dexscreener.com/latest/dex/tokens/${contract}`)
-
-let data=await res.json()
-
-let price=data.pairs[0].priceUsd
-
-let mcap=price*10000
-
-document.getElementById("price").innerText="$"+Number(price).toFixed(4)
-
-document.getElementById("marketcap").innerText="$"+Math.floor(mcap)
-
-}catch(e){
-
-document.getElementById("price").innerText="N/A"
-document.getElementById("marketcap").innerText="N/A"
-
-}
-
-document.getElementById("holders").innerText="Loading..."
-
-}
-
-loadStats()
-
-</script>
-
+<script src="js/web3.js"></script>
 </body>
-
 </html>
