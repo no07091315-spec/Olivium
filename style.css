@@ -5,11 +5,12 @@
     box-sizing: border-box;
 }
 
-/* Corpo */
+/* Body e fontes */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #0b0f1a;
-    color: white;
+    background: linear-gradient(135deg, #0b0f1a 0%, #131b2b 100%);
+    color: #ffffff;
+    scroll-behavior: smooth;
 }
 
 /* Header */
@@ -18,141 +19,169 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 8%;
-    background: #0f172a;
+    background: rgba(15,23,42,0.95);
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 .logo {
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 800;
     color: #00ffa3;
+    text-shadow: 0 0 10px #00ffa3;
 }
 
 nav a {
     margin-left: 25px;
     text-decoration: none;
-    color: white;
-    opacity: 0.8;
-    transition: opacity 0.3s;
+    color: #ffffff;
+    opacity: 0.9;
+    font-weight: 500;
+    transition: all 0.3s;
 }
 
 nav a:hover {
     opacity: 1;
+    color: #00ffa3;
+    text-shadow: 0 0 8px #00ffa3;
 }
 
 /* Hero */
 .hero {
     text-align: center;
-    padding: 110px 20px;
+    padding: 120px 20px;
+    background: url('../assets/hero-bg.png') center/cover no-repeat;
+    position: relative;
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 72px;
+    color: #00ffa3;
+    text-shadow: 0 0 20px #00ffa3;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    margin-top: 10px;
-    opacity: 0.7;
+    font-size: 20px;
+    opacity: 0.8;
+    margin-bottom: 30px;
 }
 
 /* Botões */
 .btn {
-    padding: 14px 30px;
+    padding: 16px 36px;
     border: none;
-    border-radius: 8px;
-    background: #00ffa3;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #00ffa3, #00d1ff);
     color: black;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     margin: 10px;
-    transition: transform 0.2s;
+    box-shadow: 0 4px 20px rgba(0,255,163,0.5);
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0,255,163,0.7);
 }
 
-/* Stats (Price, Marketcap, Holders, Staking) */
+/* Stats Dashboard */
 .stats {
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-top: 40px;
+    margin-top: 50px;
     flex-wrap: wrap;
 }
 
 .stat {
-    background: #111827;
-    padding: 25px 40px;
-    border-radius: 12px;
-    min-width: 140px;
+    background: linear-gradient(145deg, #111827, #1a2333);
+    padding: 30px 45px;
+    border-radius: 20px;
+    min-width: 160px;
     text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,255,163,0.5);
 }
 
 .stat h3 {
     color: #00ffa3;
-    margin-bottom: 5px;
+    font-size: 18px;
+    margin-bottom: 8px;
 }
 
 /* Sections */
 .section {
-    padding: 90px 10%;
+    padding: 100px 10%;
     text-align: center;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .card {
-    background: #111827;
-    padding: 30px;
-    border-radius: 12px;
+    background: linear-gradient(145deg, #111827, #1a2333);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0,255,163,0.5);
 }
 
 .card h3 {
     color: #00ffa3;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
 .contract {
-    font-size: 12px;
+    font-size: 13px;
     word-break: break-all;
     opacity: 0.7;
 }
 
-/* Iframes (Gráficos) */
+/* Iframes */
 iframe {
-    border-radius: 10px;
+    border-radius: 15px;
     width: 100%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
 /* Footer */
 footer {
-    padding: 40px;
-    background: #0f172a;
+    padding: 50px;
+    background: rgba(15,23,42,0.95);
     text-align: center;
     margin-top: 80px;
-    opacity: 0.7;
+    opacity: 0.9;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 45px;
-    }
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 56px; }
+    .stats { flex-direction: column; gap: 25px; }
+    .cards { grid-template-columns: 1fr; }
+}
 
-    .stats {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 480px) {
+    .hero h1 { font-size: 40px; }
+    .hero p { font-size: 16px; }
+    .btn { padding: 14px 28px; font-size: 14px; }
 }
